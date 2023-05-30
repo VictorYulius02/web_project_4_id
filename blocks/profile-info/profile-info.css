@@ -1,0 +1,11 @@
+.profile-info {
+  position: relative;
+  width: 415px;
+  padding-left: 30px;
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-column-gap: 18px;
+  grid-template-columns: 373px 42px;
+  grid-template-rows: 1fr 1fr;
+  margin: auto 0;
+}
