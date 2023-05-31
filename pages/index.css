@@ -12,3 +12,9 @@
 @import url(../blocks/profile-info/__job/profile-info__job.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__add-button-image/profile__add-button-image.css);
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__location-container/element__location-container.css);
+@import url(../blocks/element/__location/element__location.css);
+@import url(../blocks/element/__like-button/element__like-button.css);
