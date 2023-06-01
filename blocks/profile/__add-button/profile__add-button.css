@@ -9,3 +9,8 @@
   border-radius: 2px;
   align-self: center;
 }
+.profile__add-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 1s ease-in-out;
+}
