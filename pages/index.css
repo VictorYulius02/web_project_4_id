@@ -20,6 +20,7 @@
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/edit-form/edit-form.css);
+@import url(../blocks/edit-form-active/edit-form-active.css);
 @import url(../blocks/edit-form/__close-button/edit-form__close-button.css);
 @import url(../blocks/edit-form/__close-button-image/edit-form__close-button-image.css);
 @import url(../blocks/edit-form/__dialog/edit-form__dialog.css);
