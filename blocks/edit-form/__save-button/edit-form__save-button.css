@@ -1,0 +1,16 @@
+.edit-form__save-button {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 358px;
+  height: 51px;
+  left: 36px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #000000;
+  border-radius: 2px;
+}

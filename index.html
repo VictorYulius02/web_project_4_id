@@ -65,14 +65,14 @@
     </div>
   </div>
   <section class="footer">&#169; 2021 Around The U.S.</section>
-  <section class="edit-form-overlay">
-    <button type="button"><img src="./images/AdditionVector.png" alt="Close Button"></button>
-    <div class="edit-form">
-      <p class="edit-form__title">Edit profil</p>
-      <input type="text">
-      <input type="text">
-      <button type="submit">Simpan</button>
-    </div>
-  </section>
+  <div class="edit-form">
+    <form class="edit-form__dialog" action="">
+      <button class="edit-form__close-button" type="button"><img class="edit-form__close-button-image" src="./images/CloseIcon.png" alt="Close Button"></button>
+      <h2 class="edit-form__title">Edit profil</h2>
+      <input class="edit-form__name" type="text" placeholder="NAMA">
+      <input class="edit-form__job" type="text" placeholder="PEKERJAAN">
+      <button class="edit-form__save-button" type="submit">Simpan</button>
+    </form>
+  </div>
 </body>
 </html>

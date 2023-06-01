@@ -19,3 +19,11 @@
 @import url(../blocks/element/__location/element__location.css);
 @import url(../blocks/element/__like-button/element__like-button.css);
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/edit-form/edit-form.css);
+@import url(../blocks/edit-form/__close-button/edit-form__close-button.css);
+@import url(../blocks/edit-form/__close-button-image/edit-form__close-button-image.css);
+@import url(../blocks/edit-form/__dialog/edit-form__dialog.css);
+@import url(../blocks/edit-form/__title/edit-form__title.css);
+@import url(../blocks/edit-form/__name/edit-form__name.css);
+@import url(../blocks/edit-form/__job/edit-form__job.css);
+@import url(../blocks/edit-form/__save-button/edit-form__save-button.css);
