@@ -13,3 +13,10 @@
   cursor: pointer;
   transition: opacity 1s ease-in-out;
 }
+
+@media screen and (max-width: 320px) {
+  .profile-info__edit-button {
+    grid-column: 1;
+    justify-self: end;
+  }
+}

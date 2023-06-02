@@ -3,3 +3,9 @@
   height: 19px;
   object-fit: cover;
 }
+
+.element__like-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in;
+}

@@ -8,3 +8,12 @@
   color: #545454;
   padding: 60px 0;
 }
+
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 282px;
+    font-size: 14px;
+    line-height: 17px;
+    padding-top: 50px;
+  }
+}

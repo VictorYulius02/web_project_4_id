@@ -14,3 +14,13 @@
   cursor: pointer;
   transition: opacity 1s ease-in-out;
 }
+
+@media screen and (max-width: 320px) {
+  .profile__add-button {
+    position: relative;
+    margin: auto;
+    align-self: initial;
+    width: inherit;
+    right: initial;
+  }
+}

@@ -11,3 +11,13 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 320px) {
+  .edit-form__dialog {
+    width: 282px;
+    height: 322px;
+    margin: 0 auto;
+    top: 123px;
+    align-self: initial;
+  }
+}

@@ -11,3 +11,18 @@
   font-size: 14px;
   line-height: 17px;
 }
+
+.edit-form__name:focus {
+  outline: none;  
+}
+
+@media screen and (max-width: 320px) {
+  .edit-form__name {
+    width: 238px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 17px;
+    left: initial;
+    padding-bottom: 9px;
+  }
+}

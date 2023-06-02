@@ -8,3 +8,14 @@
   grid-column-gap: 17px;
   grid-row-gap: 20px;
 }
+
+@media screen and (max-width: 320px) {
+  .elements {
+    width: 282px;
+    padding-top: 36px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6 , 1fr);
+    grid-column-gap: initial;
+    grid-row-gap: 20px;
+  }
+}
