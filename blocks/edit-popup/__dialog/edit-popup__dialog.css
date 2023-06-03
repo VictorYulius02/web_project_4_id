@@ -1,6 +1,6 @@
-.edit-form__dialog {
+.edit-popup__dialog {
   width: 430px;
-  height: 330px;
+  min-height: 330px;
   background-color: #ffffff;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -12,12 +12,11 @@
   justify-content: space-around;
 }
 
-@media screen and (max-width: 320px) {
-  .edit-form__dialog {
+@media screen and (max-width: 1280px) {
+  .edit-popup__dialog {
     width: 282px;
-    height: 322px;
-    margin: 0 auto;
-    top: 123px;
+    min-height: 322px;
+    margin: auto;
     align-self: initial;
   }
 }

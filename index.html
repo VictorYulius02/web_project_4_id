@@ -11,67 +11,69 @@
   <header class="header">
     <img class="header__image" src="./images/Header.png" alt="Around The U.S.">
   </header>
-  <section class="profile">
-    <img class="profile__avatar" src="./images/AvatarPicture.png" alt="Avatar Picture">
-    <div class="profile-info">
-      <h1 class="profile-info__name">Jacques Cousteau</h1>
-      <button class="profile-info__edit-button" type="button"><img class="profile-info__edit-button-image" src="./images/EditButtonVector.png" alt="Edit Name and Job"></button>
-      <p class="profile-info__job">Penjelajah</p>
-    </div>
-    <button class="profile__add-button"><img class="profile__add-button-image" src="./images/AdditionVector.png" alt="Add"></button>
-  </section>
-  <div class="elements">
-    <div class="element">
-      <img class="element__image" src="./images/VanoiseNational.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Vanoise National Park</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+  <main>
+    <section class="profile">
+      <img class="profile__avatar" src="./images/AvatarPicture.png" alt="Avatar Picture">
+      <div class="profile-info">
+        <h1 class="profile-info__name">Jacques Cousteau</h1>
+        <button class="profile-info__edit-button" type="button"></button>
+        <p class="profile-info__job">Penjelajah</p>
       </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/Latemar.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Latemar</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+      <button class="profile__add-button"></button>
+    </section>
+    <section class="elements">
+      <div class="element">
+        <img class="element__image" src="./images/VanoiseNational.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Vanoise National Park</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
       </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/LagodiBraies.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Lago di Braies</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+      <div class="element">
+        <img class="element__image" src="./images/Latemar.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Latemar</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
       </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/PegununganGundul.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Pegunungan Gundul</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+      <div class="element">
+        <img class="element__image" src="./images/LagodiBraies.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Lago di Braies</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
       </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/DanauLouisse.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Danau Louisse</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+      <div class="element">
+        <img class="element__image" src="./images/PegununganGundul.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Pegunungan Gundul</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
       </div>
-    </div>
-    <div class="element">
-      <img class="element__image" src="./images/LembahYosemite.png" alt="Picture">
-      <div class="element__location-container">
-        <p class="element__location">Lembah Yosemite</p>
-        <img class="element__like-button" src="./images/Like.png" alt="Like">
+      <div class="element">
+        <img class="element__image" src="./images/DanauLouisse.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Danau Louisse</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
       </div>
-    </div>
-  </div>
-  <footer class="footer">&#169; 2021 Around The U.S.</footer>
-  <div class="edit-form">
-    <form class="edit-form__dialog">
-      <button class="edit-form__close-button" type="button"><img class="edit-form__close-button-image" src="./images/CloseIcon.png" alt="Close Button"></button>
-      <h2 class="edit-form__title">Edit profil</h2>
-      <input class="edit-form__name" type="text">
-      <input class="edit-form__job" type="text">
-      <button class="edit-form__save-button" type="button">Simpan</button>
+      <div class="element">
+        <img class="element__image" src="./images/LembahYosemite.png" alt="Picture">
+        <div class="element__location-container">
+          <p class="element__location">Lembah Yosemite</p>
+          <button type="button" class="element__like-button"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <p class="footer">&#169; 2021 Around The U.S.</p>
+  <div class="edit-popup">
+    <form class="edit-popup__dialog">
+      <button class="edit-popup__close-button" type="button"></button>
+      <h2 class="edit-popup__title">Edit profil</h2>
+      <input name="nameInput" class="edit-popup__input" type="text">
+      <input name="jobInput" class="edit-popup__input" type="text">
+      <button class="edit-popup__save-button" type="submit">Simpan</button>
     </form>
   </div>
   <script src="./scripts/script.js"></script>
