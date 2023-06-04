@@ -17,7 +17,7 @@
   transition: opacity 1s ease-in-out;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .edit-popup__close-button {
     right: 0;
     width: 26px;

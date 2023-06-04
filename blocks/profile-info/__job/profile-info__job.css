@@ -9,7 +9,7 @@
   color: #ffffff;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .profile-info__job {
     width: inherit;
     text-align: center;

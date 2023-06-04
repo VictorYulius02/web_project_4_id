@@ -21,7 +21,7 @@
   transition: background-color 0.5s ease-in-out;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .edit-popup__save-button {
     width: 238px;
     height: 46px;

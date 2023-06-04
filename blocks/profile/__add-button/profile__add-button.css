@@ -20,7 +20,7 @@
   transition: opacity 1s ease-in-out;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .profile__add-button {
     background-size: 16px;
     position: relative;

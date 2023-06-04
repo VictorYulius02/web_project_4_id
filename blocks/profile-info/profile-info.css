@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .profile-info {
     padding-top: 26px;
     padding-bottom: 36px;

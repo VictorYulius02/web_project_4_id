@@ -10,7 +10,7 @@
   color: #ffffff;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 890px) {
   .profile-info__name {
     margin: 0 auto;
     width: 196px;
