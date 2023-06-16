@@ -30,8 +30,7 @@
         </div>
       </div>
     </template>
-    <section class="elements">
-      
+    <section class="elements">      
       <!--<div class="element">
         <img class="element__image" src="./images/VanoiseNational.png" alt="Picture">
         <div class="element__location-container">
@@ -86,6 +85,21 @@
       <input name="nameInput" class="edit-popup__input" type="text">
       <input name="jobInput" class="edit-popup__input" type="text">
       <button class="edit-popup__save-button" type="submit">Simpan</button>
+    </form>
+  </popup>
+  <popup class="add-popup">
+    <form class="add-popup__dialog">
+      <button class="add-popup__close-button" type="button"></button>
+      <h2 class="add-popup__title">Edit profil</h2>
+      <div>
+        <input name="titleInput" class="add-popup__input" type="text">
+        <p class="add-popup__input_error">Silahkan isi kolom ini.</p>
+      </div>
+      <div>
+        <input name="webAddressInput" class="add-popup__input" type="text">
+        <p class="add-popup__input_error">Silahkan masukkan alamat web.</p>
+      </div>
+      <button class="add-popup__save-button" type="submit">Simpan</button>
     </form>
   </popup>
   <script src="./scripts/script.js"></script>

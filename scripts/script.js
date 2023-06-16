@@ -36,9 +36,7 @@ const initialCards = [
   }
 ];
 
-/*function handleLikeButtonActive() {
-  
-}*/
+/*function handleLikeButtonActive() {}*/
 
 /*for (let i = 0; i <= 5 ; i++) {
   const initialTemplate = elementTemplate.content.cloneNode(true);
@@ -58,6 +56,7 @@ initialCards.forEach((data) => {
   const likeButton = initialTemplate.querySelector('.element__like-button');
   
   elementImage.src = data.link;
+  elementImage.alt = data.name;
   elementLocation.textContent = data.name;
   /*likeButton.addEventListener('click' , );*/
   
