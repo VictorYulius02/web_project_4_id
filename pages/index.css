@@ -24,3 +24,14 @@
 @import url(../blocks/edit-popup/__title/edit-popup__title.css);
 @import url(../blocks/edit-popup/__input/edit-popup__input.css);
 @import url(../blocks/edit-popup/__save-button/edit-popup__save-button.css);
+@import url(../blocks/add-popup/add-popup.css);
+@import url(../blocks/add-popup/_active/add-popup_active.css);
+@import url(../blocks/add-popup/__close-button/add-popup__close-button.css);
+@import url(../blocks/add-popup/__dialog/add-popup__dialog.css);
+@import url(../blocks/add-popup/__title/add-popup__title.css);
+@import url(../blocks/add-popup/__fields/add-popup__fields.css);
+@import url(../blocks/add-popup/__input/add-popup__input.css);
+@import url(../blocks/add-popup/__input-error/add-popup__input-error.css);
+@import url(../blocks/add-popup/__input-error/_active/add-popup__input-error_active.css);
+@import url(../blocks/add-popup/__save-button/add-popup__save-button.css);
+@import url(../blocks/add-popup/__save-button/_disabled/add-popup__save-button_disabled.css);

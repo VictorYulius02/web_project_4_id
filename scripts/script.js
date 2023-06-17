@@ -6,8 +6,17 @@ const nameInput = document.querySelector('input[name="nameInput"]');
 const jobInput = document.querySelector('input[name="jobInput"]');
 const editPopupCloseButton = document.querySelector('.edit-popup__close-button');
 
+const addBtn = document.querySelector('.profile__add-button');
+const addPopup = document.querySelector('.add-popup');
+const titleInput = document.querySelector('input[name="titleInput"]');
+const webAddressInput = document.querySelector('input[name="webAddressInput"]');
+const addPopupCloseButton = document.querySelector('.add-popup__close-button');
+const saveBtn = document.querySelector('.add-popup__save-button');
+
 const elementTemplate = document.querySelector('.element-template');
 const elements = document.querySelector('.elements');
+
+const input = document.querySelector('.add-popup__input');
 
 const initialCards = [
   {
@@ -36,8 +45,6 @@ const initialCards = [
   }
 ];
 
-/*function handleLikeButtonActive() {}*/
-
 /*for (let i = 0; i <= 5 ; i++) {
   const initialTemplate = elementTemplate.content.cloneNode(true);
   const elementImage = initialTemplate.querySelector('.element__image');
@@ -56,9 +63,7 @@ initialCards.forEach((data) => {
   const likeButton = initialTemplate.querySelector('.element__like-button');
   
   elementImage.src = data.link;
-  elementImage.alt = data.name;
   elementLocation.textContent = data.name;
-  /*likeButton.addEventListener('click' , );*/
   
   elements.append(initialTemplate);
 });
@@ -82,4 +87,52 @@ function handleSaveEditForm(event) {
 
 editBtn.addEventListener('click' , handleEditFormActive);
 editPopupCloseButton.addEventListener('click' , handleCloseEditForm);
-editPopup.addEventListener('submit' , handleSaveEditForm)
+editPopup.addEventListener('submit' , handleSaveEditForm);
+
+function saveBtnDisabled() {
+  saveBtn.classList.add('add-popup__save-button_disabled');
+  saveBtn.setAttribute('disabled' , 'true');
+}
+
+function handleAddFormActive() {
+  addPopup.classList.add('add-popup_active');
+  titleInput.setAttribute("placeholder" , "Judul");
+  webAddressInput.setAttribute("placeholder" , "URL Gambar");
+  saveBtnDisabled();
+
+  if (titleInput.value !== "" || webAddressInput.value !== "") {
+    titleInput.opacity = "1";
+    webAddressInput.opacity = "1";
+    saveBtn.classList.remove('add-popup__save-button_disabled');
+  }
+}
+
+function handleCloseAddForm() {
+  addPopup.classList.remove('add-popup_active');
+}
+
+function handleSaveAddForm (event) {
+  event.preventDefault();
+  const initialTemplate = elementTemplate.content.cloneNode(true);
+  const elementImage = initialTemplate.querySelector('.element__image');
+  const elementLocation = initialTemplate.querySelector('.element__location');
+  const likeButton = initialTemplate.querySelector('.element__like-button');
+
+  elementImage.src = webAddressInput.value;
+  elementLocation.textContent = titleInput.value;
+
+  elements.append(initialTemplate);
+  handleCloseAddForm();
+}
+
+input.addEventListener("keypress" , event => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addPopup.click();
+  }
+})
+
+addBtn.addEventListener('click' , handleAddFormActive);
+addPopupCloseButton.addEventListener('click' , handleCloseAddForm);
+addPopup.addEventListener('submit' , handleSaveAddForm);
+
