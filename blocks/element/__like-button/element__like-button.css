@@ -1,11 +1,10 @@
 .element__like-button {
   width: 21px;
   height: 19px;
-  background-image: url(../../../images/Like.png);
-  object-fit: cover;
+  background: url(../../../images/Like.png);
   border: none;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   background-size: cover;
   align-self: center;
 }

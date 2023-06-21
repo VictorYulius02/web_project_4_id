@@ -24,56 +24,14 @@
     <template class="element-template">
       <div class="element">
         <img class="element__image" src="" alt="Picture">
+        <button type="button" class="element__delete"></button>
         <div class="element__location-container">
           <p class="element__location"></p>
           <button type="button" class="element__like-button"></button>
         </div>
       </div>
     </template>
-    <section class="elements">      
-      <!--<div class="element">
-        <img class="element__image" src="./images/VanoiseNational.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Vanoise National Park</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="./images/Latemar.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Latemar</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="./images/LagodiBraies.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Lago di Braies</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="./images/PegununganGundul.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Pegunungan Gundul</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="./images/DanauLouisse.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Danau Louisse</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img class="element__image" src="./images/LembahYosemite.png" alt="Picture">
-        <div class="element__location-container">
-          <p class="element__location">Lembah Yosemite</p>
-          <button type="button" class="element__like-button"></button>
-        </div>
-      </div>-->
-    </section>
+    <section class="elements"></section>
   </main>
   <footer class="footer">
     <p>&#169; 2021 Around The U.S.</p>
@@ -93,13 +51,13 @@
       <h2 class="add-popup__title">Tempat baru</h2>
       <div class="add-popup__fields">
         <input name="titleInput" class="add-popup__input" type="text">
-        <p class="add-popup__input-error">Silahkan isi kolom ini.</p>
+        <p name="titleErrorMsg" class="add-popup__input-error">Silahkan isi kolom ini.</p>
       </div>
       <div class="add-popup__fields">
         <input name="webAddressInput" class="add-popup__input" type="text">
-        <p class="add-popup__input-error">Silahkan masukkan alamat web.</p>
-      </div>
-      <button class="add-popup__save-button" type="submit">Simpan</button>
+        <p name="webAddressErrorMsg" class="add-popup__input-error">Silahkan masukkan alamat web.</p>
+      </div>      
+      <button class="add-popup__save-button add-popup__save-button_disabled" type="submit" disabled>Simpan</button>
     </form>
   </popup>
   <script src="./scripts/script.js"></script>
