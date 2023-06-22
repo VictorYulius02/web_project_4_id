@@ -4,6 +4,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
+  opacity: 0;
   display: none;
-  transition: display 2s linear 2s;
 }

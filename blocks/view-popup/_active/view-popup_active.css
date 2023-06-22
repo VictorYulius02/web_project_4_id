@@ -7,7 +7,7 @@
   }
 }
 
-.edit-popup_active {
+.view-popup_active {
   display: flex;
   animation: open 1s linear 1;
   opacity: 1;
