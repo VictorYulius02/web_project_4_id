@@ -176,7 +176,6 @@ function handleSaveAddForm(event) {
   createTemplate();
   handleCloseAddForm();
 
-  // Reset the form fields
   titleInput.value = '';
   webAddressInput.value = '';
   titleErrorMsg.style.display = 'none';

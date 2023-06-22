@@ -5,5 +5,5 @@
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   display: none;
-  /*opacity: 0;*/
+  transition: display 2s linear 2s;
 }
