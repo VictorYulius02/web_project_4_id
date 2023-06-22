@@ -88,6 +88,7 @@ elements.addEventListener('click', function(event) {
 });
 
 viewPopupCloseButton.addEventListener('click', function() {
+  viewPopup.classList.add('hide');
   viewPopup.classList.remove('view-popup_active');
 });
 
@@ -135,11 +136,6 @@ function handleSaveEditForm(event) {
 editBtn.addEventListener('click' , handleEditFormActive);
 editPopupCloseButton.addEventListener('click' , handleCloseEditForm);
 editPopup.addEventListener('submit' , handleSaveEditForm);
-
-/*function saveBtnDisabled() {
-  saveBtn.classList.add('add-popup__save-button_disabled');
-  saveBtn.setAttribute('disabled' , 'true');
-}*/
 
 function enableSaveBtn() {
   if (titleInput.value !== '' || webAddressInput.value !== '') {
