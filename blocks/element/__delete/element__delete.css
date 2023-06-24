@@ -3,10 +3,11 @@
   top: 20px;
   right: 20px;
   width: 20px;
-  height: 25px;
-  object-fit: contain;
-  background-size: contain;
-  background-image: url(../../../images/delete.201x256.png);
+  height: 20px;
+  object-fit: cover;
+  background-size: cover;
+  background-image: url(../../../images/Trash.png);
   border: none;
-  background-color: rgba(255, 255, 255, 0.5);  
+  /*background-color: rgba(255, 255, 255, 0.5); */ 
+  background-color: rgba(0, 0, 0, 0);
 }

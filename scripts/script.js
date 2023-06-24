@@ -193,7 +193,7 @@ function handleSaveAddForm(event) {
     link: webAddressValue
   };
 
-  initialCards.push(newCard);
+  initialCards.unshift(newCard);
   createTemplate();
   handleCloseAddForm();
 
