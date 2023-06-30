@@ -36,34 +36,40 @@
   <footer class="footer">
     <p>&#169; 2021 Around The U.S.</p>
   </footer>
-  <popup class="edit-popup">
-    <form class="edit-popup__dialog">
-      <button class="edit-popup__close-button" type="button"></button>
-      <h2 class="edit-popup__title">Edit profil</h2>
-      <input name="nameInput" class="edit-popup__input" type="text">
-      <input name="jobInput" class="edit-popup__input" type="text">
-      <button class="edit-popup__save-button" type="submit">Simpan</button>
-    </form>
-  </popup>
-  <popup class="add-popup">
-    <form class="add-popup__dialog">
-      <button class="add-popup__close-button" type="button"></button>
-      <h2 class="add-popup__title">Tempat baru</h2>
-      <div class="add-popup__fields">
-        <input name="titleInput" class="add-popup__input" type="text">
-        <p name="titleErrorMsg" class="add-popup__input-error">Silahkan isi kolom ini.</p>
+  <popup class="popup">
+    <form class="popup__form">
+      <button class="popup__close-button" type="button"></button>
+      <h2 class="popup__title">Edit profil</h2>
+      <div class="popup__fields">
+        <input id="name" name="nameInput" class="popup__input" type="text">
+        <span class="popup__input-error"></span>
       </div>
-      <div class="add-popup__fields">
-        <input name="webAddressInput" class="add-popup__input" type="text">
-        <p name="webAddressErrorMsg" class="add-popup__input-error">Silahkan masukkan alamat web.</p>
-      </div>      
-      <button class="add-popup__save-button add-popup__save-button_disabled" type="submit" disabled>Simpan</button>
+      <div>
+        <input id="job" name="jobInput" class="popup__input" type="text">
+        <span class="popup__input-error"></span>
+      </div>
+      <button class="popup__save-button" type="submit">Simpan</button>
     </form>
   </popup>
-  <popup class="view-popup">
-    <div class="view-popup__dialog">
-      <img class="view-popup__image" src=" " alt="picture">
-      <button class="view-popup__close-button" type="button"></button>
+  <popup class="popup">
+    <form class="popup__form">
+      <button class="popup__close-button" type="button"></button>
+      <h2 class="popup__title">Tempat baru</h2>
+      <div class="popup__fields">
+        <input id="title" name="titleInput" class="popup__input" type="text">
+        <span name="titleErrorMsg" class="popup__input-error"></span>
+      </div>
+      <div class="popup__fields">
+        <input id="webAddress" name="webAddressInput" class="popup__input" type="text">
+        <span name="webAddressErrorMsg" class="popup__input-error"></span>
+      </div>      
+      <button class="popup__save-button" type="submit">Simpan</button>
+    </form>
+  </popup>
+  <popup class="popup">
+    <div class="popup__dialog">
+      <img class="popup__image" src=" " alt="picture">
+      <button class="popup__close-button" type="button"></button>
     </div>
   </popup>
   <script src="./scripts/script.js"></script>

@@ -1,4 +1,4 @@
-.add-popup__save-button {
+.popup__save-button {
   position: relative;
   margin: 0;
   padding: 0;
@@ -16,14 +16,14 @@
   /*opacity: 0.2;*/
 }
 
-.add-popup__save-button:hover {
+.popup__save-button:hover {
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   transition: background-color 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 890px) {
-  .add-popup__save-button {
+  .popup__save-button {
     width: 238px;
     height: 46px;
     left: initial;
