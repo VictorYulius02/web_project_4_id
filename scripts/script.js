@@ -210,7 +210,7 @@ addPopupCloseButton.addEventListener('click' , handleCloseAddForm);
 addPopup.addEventListener('submit' , handleSaveAddForm);
 /*addPopup.addEventListener('submit' , createTemplate);*/
 
-input.addEventListener("keypress" , event => {
+input.target.addEventListener("keypress" , event => {
   if (event.key === "Enter") {
     event.preventDefault();
     addPopup.submit();
