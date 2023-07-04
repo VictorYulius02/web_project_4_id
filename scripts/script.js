@@ -2,26 +2,26 @@ const editBtn = document.querySelector('.profile-info__edit-button');
 const nameProfile = document.querySelector('.profile-info__name');
 const jobProfile = document.querySelector('.profile-info__job');
 
-const editPopup = document.querySelector('.edit-popup');
+const editPopup = document.querySelector('popup[name="editPopup"]');
 const nameInput = document.querySelector('input[name="nameInput"]');
 const jobInput = document.querySelector('input[name="jobInput"]');
-const editPopupCloseButton = document.querySelector('.edit-popup__close-button');
+const editPopupCloseButton = document.querySelector('button[name="editPopupCloseButton"]');
 
 const likeBtn = document.querySelectorAll('.element__like-button');
 
 const addBtn = document.querySelector('.profile__add-button');
-const addPopup = document.querySelector('.add-popup');
+const addPopup = document.querySelector('popup[name="addPopup"]');
 const titleInput = document.querySelector('input[name="titleInput"]');
 const webAddressInput = document.querySelector('input[name="webAddressInput"]');
-const addPopupCloseButton = document.querySelector('.add-popup__close-button');
-const saveBtn = document.querySelector('.add-popup__save-button');
-const titleErrorMsg = document.querySelector('p[name="titleErrorMsg"]');
-const webAddressErrorMsg = document.querySelector('p[name="webAddressErrorMsg"]');
+const addPopupCloseButton = document.querySelector('button[name="addPopupCloseButton"]');
+const saveBtn = document.querySelector('button[name="addPopupSaveButton"]');
+const titleErrorMsg = document.querySelector('span[name="titleErrorMsg"]');
+const webAddressErrorMsg = document.querySelector('span[name="webAddressErrorMsg"]');
 
 const elementTemplate = document.querySelector('.element-template');
 const elements = document.querySelector('.elements');
 
-const input = document.querySelector('.add-popup__input');
+const input = document.querySelector('popup__input');
 
 const initialCards = [
   {
@@ -69,16 +69,16 @@ function createTemplate() {
 
 createTemplate();
 
-const viewPopup = document.querySelector('.view-popup');
-const viewPopupImage = viewPopup.querySelector('.view-popup__image');
-const viewPopupCloseButton = viewPopup.querySelector('.view-popup__close-button');
+const viewPopup = document.querySelector('popup[name="viewPopup"]');
+const viewPopupImage = viewPopup.querySelector('.popup__image');
+const viewPopupCloseButton = viewPopup.querySelector('button[name="viewPopupCloseButton"]');
 
 function handleImageView(event) {
   const clickedImage = event.target;
   const imageUrl = clickedImage.src;
 
   viewPopupImage.src = imageUrl;
-  viewPopup.classList.add('view-popup_active');
+  viewPopup.classList.add('popup_active');
 }
 
 elements.addEventListener('click', function(event) {
@@ -89,7 +89,7 @@ elements.addEventListener('click', function(event) {
 
 viewPopupCloseButton.addEventListener('click', function() {
   viewPopup.classList.add('hide');
-  viewPopup.classList.remove('view-popup_active');
+  viewPopup.classList.remove('popup_active');
 });
 
 
@@ -116,14 +116,14 @@ elements.addEventListener('click', function(event) {
 });
 
 function handleEditFormActive() {
-  editPopup.classList.add('edit-popup_active');
+  editPopup.classList.add('popup_active');
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 }
 
 function handleCloseEditForm() {
   editPopup.classList.add('hide');
-  editPopup.classList.remove('edit-popup_active');
+  editPopup.classList.remove('popup_active');
 }
 
 function handleSaveEditForm(event) {
@@ -144,12 +144,12 @@ function enableSaveBtn() {
     webAddressInput.style.opacity = "1";
 
     saveBtn.disabled = false;
-    saveBtn.classList.remove('add-popup__save-button_disabled');
+    saveBtn.classList.remove('popup__save-button_inactive');
   }
 }
 
 function handleAddFormActive() {
-  addPopup.classList.add('add-popup_active');
+  addPopup.classList.add('popup_active');
   titleInput.setAttribute("placeholder" , "Judul");
   webAddressInput.setAttribute("placeholder" , "URL Gambar");
   
@@ -161,7 +161,7 @@ function handleAddFormActive() {
 
 function handleCloseAddForm() {
   addPopup.classList.add('hide');
-  addPopup.classList.remove('add-popup_active');
+  addPopup.classList.remove('popup_active');
 }
 
 function handleSaveAddForm(event) {

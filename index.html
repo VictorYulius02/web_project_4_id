@@ -36,40 +36,40 @@
   <footer class="footer">
     <p>&#169; 2021 Around The U.S.</p>
   </footer>
-  <popup class="popup">
+  <popup name="editPopup" class="popup">
     <form class="popup__form">
-      <button class="popup__close-button" type="button"></button>
+      <button name="editPopupCloseButton" class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Edit profil</h2>
       <div class="popup__fields">
-        <input id="name" name="nameInput" class="popup__input" type="text">
-        <span class="popup__input-error"></span>
+        <input id="name-input" name="nameInput" class="popup__input" type="text" minlength="2" maxlength="40" required>
+        <span class="popup__input-error name-input-error"></span>
       </div>
-      <div>
-        <input id="job" name="jobInput" class="popup__input" type="text">
-        <span class="popup__input-error"></span>
+      <div class="popup__fields">
+        <input id="job-input" name="jobInput" class="popup__input" type="text" minlength="2" maxlength="200" required>
+        <span class="popup__input-error job-input-error"></span>
       </div>
-      <button class="popup__save-button" type="submit">Simpan</button>
+      <button name="editPopupSaveButton" class="popup__save-button popup__save-button_inactive" type="submit">Simpan</button>
     </form>
   </popup>
-  <popup class="popup">
+  <popup name="addPopup" class="popup">
     <form class="popup__form">
-      <button class="popup__close-button" type="button"></button>
+      <button name="addPopupCloseButton" class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Tempat baru</h2>
       <div class="popup__fields">
-        <input id="title" name="titleInput" class="popup__input" type="text">
-        <span name="titleErrorMsg" class="popup__input-error"></span>
+        <input id="title-input" name="titleInput" class="popup__input" type="text" minlength="2" maxlength="30" required>
+        <span name="titleErrorMsg" class="popup__input-error title-input-error"></span>
       </div>
       <div class="popup__fields">
-        <input id="webAddress" name="webAddressInput" class="popup__input" type="text">
-        <span name="webAddressErrorMsg" class="popup__input-error"></span>
+        <input id="webaddress-input" name="webAddressInput" class="popup__input" type="url" required>
+        <span name="webAddressErrorMsg" class="popup__input-error webaddress-input-error"></span>
       </div>      
-      <button class="popup__save-button" type="submit">Simpan</button>
+      <button name="addPopupSaveButton" class="popup__save-button popup__save-button_inactive" type="submit">Simpan</button>
     </form>
   </popup>
-  <popup class="popup">
-    <div class="popup__dialog">
+  <popup name="viewPopup" class="popup">
+    <div class="popup__form">
       <img class="popup__image" src=" " alt="picture">
-      <button class="popup__close-button" type="button"></button>
+      <button name="viewPopupCloseButton" class="popup__close-button" type="button"></button>
     </div>
   </popup>
   <script src="./scripts/script.js"></script>
