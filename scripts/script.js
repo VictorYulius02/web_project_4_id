@@ -115,10 +115,82 @@ elements.addEventListener('click', function(event) {
   }
 });
 
+const showInputError = (form , input , errMsg) => {
+  const error = form.querySelector(`.${input.id}-error`);
+  input.classList.add("popup__input_type-error");
+  error.textContent = errMsg;
+  error.classList.add("popup__input-error_active");
+};
+
+const hideInputError = (form , input) => {
+  const error = form.querySelector(`.${input.id}-error`);
+  input.classList.remove("popup__input_type-error");
+  error.classList.remove("popup__input-error_active");
+  error.textContent = "";
+};
+
+const checkInputValid = (form , input) => {
+  if (!input.validity.valid) {
+    showInputError(form , input , input.validationMessage);
+  } else {
+    hideInputError(form , input);
+  }
+};
+
+const hasInvalidInput = (inputList) => {
+  return inputList.some((input) => {
+    return !input.validity.valid;
+  });
+};
+
+const toggleButtonState = (inputList , button) => {
+  console.log(hasInvalidInput(inputList));
+  if (hasInvalidInput(inputList)) {
+    button.classList.add("popup__save-button_inactive");
+  } else {
+    button.classList.remove("popup__save-button_inactive");
+  }
+};
+
+const setEventListeners = (form) => {
+  const inputList = Array.from(form.querySelectorAll(".popup__input"));
+  const button = form.querySelector(".popup__save-button");
+
+  toggleButtonState(inputList , button);
+
+  inputList.forEach((input) => {
+    input.addEventListener("input" , () => {
+      checkInputValid(form , input);
+      toggleButtonState(inputList , button);
+    });
+  });
+
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll(".popup__form"));
+  formList.forEach((form) => {
+    form.addEventListener("submit" , (evt) => {
+      evt.preventDefault();
+    });
+
+    setEventListeners(form);
+
+  });
+};
+
+/*enableValidation();*/
+
 function handleEditFormActive() {
   editPopup.classList.add('popup_active');
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
+
+  nameInput.value = "";
+  jobInput.value = "";
+
+  nameInput.setAttribute("placeholder" , "Nama");
+  jobInput.setAttribute("placeholder" , "Pekerjaan");
+
+  enableValidation();
 }
 
 function handleCloseEditForm() {
@@ -137,26 +209,17 @@ editBtn.addEventListener('click' , handleEditFormActive);
 editPopupCloseButton.addEventListener('click' , handleCloseEditForm);
 editPopup.addEventListener('submit' , handleSaveEditForm);
 
-function enableSaveBtn() {
-  if (titleInput.value !== '' || webAddressInput.value !== '') {
-
-    titleInput.style.opacity = "1";
-    webAddressInput.style.opacity = "1";
-
-    saveBtn.disabled = false;
-    saveBtn.classList.remove('popup__save-button_inactive');
-  }
-}
-
 function handleAddFormActive() {
   addPopup.classList.add('popup_active');
+
+  titleInput.value = "";
+  webAddressInput.value = "";
+
   titleInput.setAttribute("placeholder" , "Judul");
   webAddressInput.setAttribute("placeholder" , "URL Gambar");
-  
-  titleInput.addEventListener('input' , enableSaveBtn);
-  webAddressInput.addEventListener('input' , enableSaveBtn);
 
-  enableSaveBtn();
+  enableValidation();
+
 }
 
 function handleCloseAddForm() {
@@ -170,24 +233,6 @@ function handleSaveAddForm(event) {
   const titleValue = titleInput.value;
   const webAddressValue = webAddressInput.value;
 
-  if (titleValue.trim() !== '') {
-    titleErrorMsg.style.display ='none';
-  }
-
-  if (webAddressValue.trim() !== '') {
-    webAddressErrorMsg.style.display ='none';
-  }
-
-  if (titleValue.trim() === '') {
-    titleErrorMsg.style.display = 'block';
-    return;
-  }
-
-  if (webAddressValue.trim() === '') {
-    webAddressErrorMsg.style.display = 'block';
-    return;
-  }
-
   const newCard = {
     name: titleValue,
     link: webAddressValue
@@ -196,11 +241,6 @@ function handleSaveAddForm(event) {
   initialCards.unshift(newCard);
   createTemplate();
   handleCloseAddForm();
-
-  titleInput.value = '';
-  webAddressInput.value = '';
-  titleErrorMsg.style.display = 'none';
-  webAddressErrorMsg.style.display = 'none';
 }
 
 addPopup.addEventListener('submit', handleSaveAddForm);
@@ -208,11 +248,3 @@ addPopup.addEventListener('submit', handleSaveAddForm);
 addBtn.addEventListener('click' , handleAddFormActive);
 addPopupCloseButton.addEventListener('click' , handleCloseAddForm);
 addPopup.addEventListener('submit' , handleSaveAddForm);
-/*addPopup.addEventListener('submit' , createTemplate);*/
-
-input.target.addEventListener("keypress" , event => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    addPopup.submit();
-  }
-})
