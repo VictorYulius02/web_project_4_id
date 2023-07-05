@@ -126,7 +126,7 @@ elements.addEventListener('click', function(event) {
   }
 });
 
-const showInputError = (form , input , errMsg) => {
+/*const showInputError = (form , input , errMsg) => {
   const error = form.querySelector(`.${input.id}-error`);
   input.classList.add("popup__input_type-error");
   error.textContent = errMsg;
@@ -188,7 +188,7 @@ const enableValidation = () => {
     setEventListeners(form);
 
   });
-};
+};*/
 
 /*enableValidation();*/
 
