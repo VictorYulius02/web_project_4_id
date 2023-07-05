@@ -23,6 +23,10 @@ const elements = document.querySelector('.elements');
 
 const input = document.querySelector('popup__input');
 
+const editOverlay = document.querySelector('div[name="editOverlay"]');
+const addOverlay = document.querySelector('div[name="addOverlay"]');
+const viewOverlay = document.querySelector('div[name="viewOverlay"]');
+
 const initialCards = [
   {
     name: "Lembah Yosemite",
@@ -87,10 +91,17 @@ elements.addEventListener('click', function(event) {
   }
 });
 
-viewPopupCloseButton.addEventListener('click', function() {
+function handleCloseViewForm() {
   viewPopup.classList.add('hide');
   viewPopup.classList.remove('popup_active');
-});
+}
+
+viewPopupCloseButton.addEventListener('click', handleCloseViewForm);
+
+/*viewPopupCloseButton.addEventListener('click', function() {
+  viewPopup.classList.add('hide');
+  viewPopup.classList.remove('popup_active');
+});*/
 
 
 function handleDeleteElement(event) {
@@ -181,6 +192,11 @@ const enableValidation = () => {
 
 /*enableValidation();*/
 
+function handleCloseEditForm() {
+  editPopup.classList.add('hide');
+  editPopup.classList.remove('popup_active');
+}
+
 function handleEditFormActive() {
   editPopup.classList.add('popup_active');
 
@@ -191,11 +207,6 @@ function handleEditFormActive() {
   jobInput.setAttribute("placeholder" , "Pekerjaan");
 
   enableValidation();
-}
-
-function handleCloseEditForm() {
-  editPopup.classList.add('hide');
-  editPopup.classList.remove('popup_active');
 }
 
 function handleSaveEditForm(event) {
@@ -219,7 +230,6 @@ function handleAddFormActive() {
   webAddressInput.setAttribute("placeholder" , "URL Gambar");
 
   enableValidation();
-
 }
 
 function handleCloseAddForm() {
@@ -248,3 +258,15 @@ addPopup.addEventListener('submit', handleSaveAddForm);
 addBtn.addEventListener('click' , handleAddFormActive);
 addPopupCloseButton.addEventListener('click' , handleCloseAddForm);
 addPopup.addEventListener('submit' , handleSaveAddForm);
+
+viewOverlay.addEventListener("click" , handleCloseViewForm);
+editOverlay.addEventListener("click" , handleCloseEditForm);
+addOverlay.addEventListener("click" , handleCloseAddForm);
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
+    handleCloseEditForm();
+    handleCloseViewForm();
+    handleCloseAddForm();
+  }
+});

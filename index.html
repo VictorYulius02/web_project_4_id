@@ -37,6 +37,7 @@
     <p>&#169; 2021 Around The U.S.</p>
   </footer>
   <popup name="editPopup" class="popup">
+    <div name="editOverlay" class="popup__overlay"></div>
     <form class="popup__form">
       <button name="editPopupCloseButton" class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Edit profil</h2>
@@ -52,6 +53,7 @@
     </form>
   </popup>
   <popup name="addPopup" class="popup">
+    <div name="addOverlay" class="popup__overlay"></div>
     <form class="popup__form">
       <button name="addPopupCloseButton" class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Tempat baru</h2>
@@ -67,10 +69,11 @@
     </form>
   </popup>
   <popup name="viewPopup" class="popup">
-    <div class="popup__form">
+    <div name="viewOverlay" class="popup__overlay"></div>
+    <form class="popup__form">
       <img class="popup__image" src=" " alt="picture">
       <button name="viewPopupCloseButton" class="popup__close-button" type="button"></button>
-    </div>
+    </form>
   </popup>
   <script src="./scripts/script.js"></script>
 </body>
