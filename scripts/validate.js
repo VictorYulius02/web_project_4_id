@@ -27,7 +27,6 @@ const hasInvalidInput = (inputList) => {
 };
 
 const toggleButtonState = (inputList , button) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     button.classList.add("popup__save-button_inactive");
   } else {

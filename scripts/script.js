@@ -77,12 +77,27 @@ const viewPopup = document.querySelector('popup[name="viewPopup"]');
 const viewPopupImage = viewPopup.querySelector('.popup__image');
 const viewPopupCloseButton = viewPopup.querySelector('button[name="viewPopupCloseButton"]');
 
+function handleEscKeypress(event) {
+  if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
+    handleCloseViewForm();
+  };
+}
+
+function handleCloseViewForm() {
+  viewPopup.classList.add('hide');
+  viewPopup.classList.remove('popup_active');
+
+  viewPopup.removeEventListener('keydown' , handleEscKeypress);
+}
+
 function handleImageView(event) {
   const clickedImage = event.target;
   const imageUrl = clickedImage.src;
 
   viewPopupImage.src = imageUrl;
   viewPopup.classList.add('popup_active');
+  
+  viewPopup.addEventListener('keydown' , handleEscKeypress);
 }
 
 elements.addEventListener('click', function(event) {
@@ -91,18 +106,7 @@ elements.addEventListener('click', function(event) {
   }
 });
 
-function handleCloseViewForm() {
-  viewPopup.classList.add('hide');
-  viewPopup.classList.remove('popup_active');
-}
-
 viewPopupCloseButton.addEventListener('click', handleCloseViewForm);
-
-/*viewPopupCloseButton.addEventListener('click', function() {
-  viewPopup.classList.add('hide');
-  viewPopup.classList.remove('popup_active');
-});*/
-
 
 function handleDeleteElement(event) {
   const deleteBtn = event.target;
@@ -126,75 +130,11 @@ elements.addEventListener('click', function(event) {
   }
 });
 
-/*const showInputError = (form , input , errMsg) => {
-  const error = form.querySelector(`.${input.id}-error`);
-  input.classList.add("popup__input_type-error");
-  error.textContent = errMsg;
-  error.classList.add("popup__input-error_active");
-};
-
-const hideInputError = (form , input) => {
-  const error = form.querySelector(`.${input.id}-error`);
-  input.classList.remove("popup__input_type-error");
-  error.classList.remove("popup__input-error_active");
-  error.textContent = "";
-};
-
-const checkInputValid = (form , input) => {
-  if (!input.validity.valid) {
-    showInputError(form , input , input.validationMessage);
-  } else {
-    hideInputError(form , input);
-  }
-};
-
-const hasInvalidInput = (inputList) => {
-  return inputList.some((input) => {
-    return !input.validity.valid;
-  });
-};
-
-const toggleButtonState = (inputList , button) => {
-  console.log(hasInvalidInput(inputList));
-  if (hasInvalidInput(inputList)) {
-    button.classList.add("popup__save-button_inactive");
-  } else {
-    button.classList.remove("popup__save-button_inactive");
-  }
-};
-
-const setEventListeners = (form) => {
-  const inputList = Array.from(form.querySelectorAll(".popup__input"));
-  const button = form.querySelector(".popup__save-button");
-
-  toggleButtonState(inputList , button);
-
-  inputList.forEach((input) => {
-    input.addEventListener("input" , () => {
-      checkInputValid(form , input);
-      toggleButtonState(inputList , button);
-    });
-  });
-
-};
-
-const enableValidation = () => {
-  const formList = Array.from(document.querySelectorAll(".popup__form"));
-  formList.forEach((form) => {
-    form.addEventListener("submit" , (evt) => {
-      evt.preventDefault();
-    });
-
-    setEventListeners(form);
-
-  });
-};*/
-
-/*enableValidation();*/
-
 function handleCloseEditForm() {
   editPopup.classList.add('hide');
   editPopup.classList.remove('popup_active');
+
+  editPopup.removeEventListener('keydown' , handleEscKeypress);
 }
 
 function handleEditFormActive() {
@@ -205,6 +145,8 @@ function handleEditFormActive() {
 
   nameInput.setAttribute("placeholder" , "Nama");
   jobInput.setAttribute("placeholder" , "Pekerjaan");
+
+  editPopup.addEventListener('keydown' , handleEscKeypress);
 
   enableValidation();
 }
@@ -229,12 +171,16 @@ function handleAddFormActive() {
   titleInput.setAttribute("placeholder" , "Judul");
   webAddressInput.setAttribute("placeholder" , "URL Gambar");
 
+  addPopup.addEventListener('keydown' , handleEscKeypress);
+
   enableValidation();
 }
 
 function handleCloseAddForm() {
   addPopup.classList.add('hide');
   addPopup.classList.remove('popup_active');
+
+  addPopup.removeEventListener('keydown' , handleEscKeypress);
 }
 
 function handleSaveAddForm(event) {
