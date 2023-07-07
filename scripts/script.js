@@ -80,6 +80,8 @@ const viewPopupCloseButton = viewPopup.querySelector('button[name="viewPopupClos
 function handleEscKeypress(event) {
   if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
     handleCloseViewForm();
+    handleCloseEditForm();
+    handleCloseAddForm();
   };
 }
 
@@ -87,7 +89,7 @@ function handleCloseViewForm() {
   viewPopup.classList.add('hide');
   viewPopup.classList.remove('popup_active');
 
-  viewPopup.removeEventListener('keydown' , handleEscKeypress);
+  document.removeEventListener('keydown' , handleEscKeypress);
 }
 
 function handleImageView(event) {
@@ -97,7 +99,7 @@ function handleImageView(event) {
   viewPopupImage.src = imageUrl;
   viewPopup.classList.add('popup_active');
   
-  viewPopup.addEventListener('keydown' , handleEscKeypress);
+  document.addEventListener('keydown' , handleEscKeypress);
 }
 
 elements.addEventListener('click', function(event) {
@@ -134,7 +136,7 @@ function handleCloseEditForm() {
   editPopup.classList.add('hide');
   editPopup.classList.remove('popup_active');
 
-  editPopup.removeEventListener('keydown' , handleEscKeypress);
+  document.removeEventListener('keydown' , handleEscKeypress);
 }
 
 function handleEditFormActive() {
@@ -146,7 +148,7 @@ function handleEditFormActive() {
   nameInput.setAttribute("placeholder" , "Nama");
   jobInput.setAttribute("placeholder" , "Pekerjaan");
 
-  editPopup.addEventListener('keydown' , handleEscKeypress);
+  document.addEventListener('keydown' , handleEscKeypress);
 
   enableValidation();
 }
@@ -155,6 +157,7 @@ function handleSaveEditForm(event) {
   event.preventDefault();
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
+
   handleCloseEditForm();
 }
 
@@ -171,7 +174,7 @@ function handleAddFormActive() {
   titleInput.setAttribute("placeholder" , "Judul");
   webAddressInput.setAttribute("placeholder" , "URL Gambar");
 
-  addPopup.addEventListener('keydown' , handleEscKeypress);
+  document.addEventListener('keydown' , handleEscKeypress);
 
   enableValidation();
 }
@@ -180,7 +183,7 @@ function handleCloseAddForm() {
   addPopup.classList.add('hide');
   addPopup.classList.remove('popup_active');
 
-  addPopup.removeEventListener('keydown' , handleEscKeypress);
+  document.removeEventListener('keydown' , handleEscKeypress);
 }
 
 function handleSaveAddForm(event) {
@@ -208,11 +211,3 @@ addPopup.addEventListener('submit' , handleSaveAddForm);
 viewOverlay.addEventListener("click" , handleCloseViewForm);
 editOverlay.addEventListener("click" , handleCloseEditForm);
 addOverlay.addEventListener("click" , handleCloseAddForm);
-
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape' || event.key === 'Esc' || event.keyCode === 27) {
-    handleCloseEditForm();
-    handleCloseViewForm();
-    handleCloseAddForm();
-  }
-});
