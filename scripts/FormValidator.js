@@ -29,15 +29,17 @@ class FormValidator {
 
   _hasInvalidInput() {
     return this._inputList.some((input) => {
-      return !this._input.validity.valid;
+      return !input.validity.valid;
     });
   };
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._button.classList.add("popup__save-button_inactive");
+      this._button.setAttribute('disabled', 'disabled');
     } else {
       this._button.classList.remove("popup__save-button_inactive");
+      this._button.removeAttribute('disabled');
     }
   };
 

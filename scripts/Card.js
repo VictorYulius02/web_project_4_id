@@ -95,7 +95,14 @@ class Card {
     const element = this._getTemplate();
   
     element.querySelector('.element__image').src = this._url;
-    element.querySelector('.element__location').textContent = this._title;  
+    element.querySelector('.element__location').textContent = this._title;
+    
+    element.addEventListener('click', function(event) {
+      if (event.target.classList.contains('element__image')) {
+        this._handleImageView(event);
+      }
+    }.bind(this));
+
     element.querySelector('.element__delete').addEventListener('click', this._handleDeleteElement);
     this._viewPopupCloseButton.addEventListener('click', this._handleCloseViewForm);
     this._viewOverlay.addEventListener("click" , this._handleCloseViewForm);

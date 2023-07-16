@@ -15,11 +15,6 @@ const addPopup = document.querySelector('popup[name="addPopup"]');
 const titleInput = document.querySelector('input[name="titleInput"]');
 const webAddressInput = document.querySelector('input[name="webAddressInput"]');
 const addPopupCloseButton = document.querySelector('button[name="addPopupCloseButton"]');
-const saveBtn = document.querySelector('button[name="addPopupSaveButton"]');
-const titleErrorMsg = document.querySelector('span[name="titleErrorMsg"]');
-const webAddressErrorMsg = document.querySelector('span[name="webAddressErrorMsg"]');
-
-const input = document.querySelector('popup__input');
 
 const editOverlay = document.querySelector('div[name="editOverlay"]');
 const addOverlay = document.querySelector('div[name="addOverlay"]');
@@ -50,8 +45,8 @@ function handleCloseEditForm() {
 function handleEditFormActive() {
   editPopup.classList.add('popup_active');
 
-  nameInput.value = "";
-  jobInput.value = "";
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
 
   nameInput.setAttribute("placeholder" , "Nama");
   jobInput.setAttribute("placeholder" , "Pekerjaan");
