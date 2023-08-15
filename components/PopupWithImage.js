@@ -12,11 +12,7 @@ class PopupWithImage extends Popup {
     this._image.src = imageUrl;
     this._image.alt = caption;
     this._caption.textContent = caption;    
-    this._setEventListeners();
-  }
-
-  _setEventListeners() {
-    super.setEventListeners();
+    super._setEventListeners();
   }
 }
 
