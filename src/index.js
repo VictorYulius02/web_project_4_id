@@ -1,10 +1,20 @@
-import Popup from '../components/Popup.js';
-import PopupWithForm from '../components/PopupWithForms.js';
-import PopupWithImage from '../components/PopupWithImage.js';
-import UserInfo from '../components/UserInfo.js';
-import FormValidator from '../components/FormValidator.js';
-import { initialCards , Card} from '../components/Card.js';
-import Section from '../components/Section.js';
+import "./styles/index.css";
+
+import headerImg from "./images/header.png";
+import profileAvt from "./images/AvatarPicture.png";
+
+import PopupWithForm from './components/PopupWithForms.js';
+import PopupWithImage from './components/PopupWithImage.js';
+import UserInfo from './components/UserInfo.js';
+import FormValidator from './components/FormValidator.js';
+import { initialCards , Card} from './components/Card.js';
+import Section from './components/Section.js';
+
+const headerImage = document.getElementById('header-image');
+headerImage.src = headerImg;
+
+const profileAvatar = document.getElementById('profile-avatar');
+profileAvatar.src= profileAvt;
 
 const userInfo = new UserInfo('.profile-info__name', '.profile-info__job');
 

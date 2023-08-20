@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Around The U.S.</title>
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__image" src="./images/Header.png" alt="Around The U.S.">
+    <img id="header-image" class="header__image" src="<%=require('./images/header.png')%>" alt="Around The U.S.">
   </header>
   <main>
     <section class="profile">
-      <img class="profile__avatar" src="./images/AvatarPicture.png" alt="Avatar Picture">
+      <img id="profile-avatar" class="profile__avatar" src="<%=require('./images/AvatarPicture.png')%>" alt="Avatar Picture">
       <div class="profile-info">
         <h1 class="profile-info__name">Jacques Cousteau</h1>
         <button class="profile-info__edit-button" type="button"></button>
